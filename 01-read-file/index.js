@@ -1,0 +1,6 @@
+import * as fs from 'fs';
+import * as path from 'path';
+
+const readableStream = fs.createReadStream(path.join('01-read-file', 'text.txt'), 'utf-8');
+
+readableStream.on('data', chunk => console.log(chunk));
