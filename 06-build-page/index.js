@@ -24,6 +24,7 @@ fs.readFile('06-build-page/template.html',  function(err, data) {
   const template = data.toString();
   const array = data.toString().split("\n");
   const components = template.match(/(?<={{).+(?=}})/g).sort();
+
   let result = array.map(item => {
     if (item.trim() === `{{${components[0]}}}`) {
       return componentsArray[0].toString()
